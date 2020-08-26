@@ -2,6 +2,8 @@ package com.nyaxs.nyabox.controller;
 
 import com.nyaxs.nyabox.entity.Files;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
@@ -26,6 +28,16 @@ public class FileController {
         File file = new File(PATH);
         File[] list = file.listFiles();
         return filesList;
+    }
+
+    @PostMapping("/upload")
+    public int uploadFile(@RequestBody Files file){
+        return 1;
+    }
+
+    @GetMapping("/download")
+    public void downFile(){
+        
     }
 
 }
