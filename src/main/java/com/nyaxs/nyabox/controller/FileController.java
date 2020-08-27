@@ -66,8 +66,8 @@ public class FileController {
 
 
     @GetMapping("/download/{fileName:.+}")
-    public ResponseEntity<Resource> downFile(@PathVariable String fielName, HttpServletRequest request){
-        Resource resource = fileService.loadFileAsResource(fielName);
+    public ResponseEntity<Resource> downFile(@PathVariable String fileName, HttpServletRequest request){
+        Resource resource = fileService.loadFileAsResource(fileName);
         String contentType = null;
         try{
             contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
