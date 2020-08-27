@@ -26,6 +26,10 @@ public class FileService {
     //文件存储到本地的地址
     private final Path fileStorageLocation ;
 
+    public Path getFileStorageLocation(){
+        return this.fileStorageLocation;
+    }
+
     @Autowired
     public FileService(FileProperties fileProperties) {
         this.fileStorageLocation = Paths.get(fileProperties.getUploadDir())
