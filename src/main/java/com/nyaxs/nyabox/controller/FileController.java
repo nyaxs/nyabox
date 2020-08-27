@@ -1,10 +1,10 @@
 package com.nyaxs.nyabox.controller;
 
 import com.nyaxs.nyabox.entity.Files;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.nyaxs.nyabox.entity.UploadFileResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -18,6 +18,7 @@ import java.util.List;
  * @Version 1.0
  **/
 @RestController
+@Slf4j
 public class FileController {
 
     private static final String PATH = "";
@@ -31,8 +32,8 @@ public class FileController {
     }
 
     @PostMapping("/upload")
-    public int uploadFile(@RequestBody Files file){
-        return 1;
+    public UploadFileResponse uploadFile(@RequestParam MultipartFile file){
+        return null;
     }
 
     @GetMapping("/download")
